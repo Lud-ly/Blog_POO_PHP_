@@ -1,11 +1,18 @@
 <?php
 
+namespace APP;
 
 /**
  * App
  */
 class App
 {
+
+    const DB_NAME = 'blog';
+    const DB_USER = 'root';
+    const DB_PASS = '';
+    const DB_HOST = 'localhost';
+
 
     /**
      * database
@@ -14,14 +21,14 @@ class App
      */
     private static $database;
 
-    /**
-     * getDatabase
-     *
-     * @return void
-     */
-    public  static function getDatabase()
+
+
+    public  static function getDb()
     {
-        # code...
-        return new App\Database('blog');
+        if (self::$database === null) {
+
+            self::$database =  new Database(self::DB_NAME, self::DB_USER, self::DB_PASS, self::DB_HOST);
+        }
+        return self::$database;
     }
 }

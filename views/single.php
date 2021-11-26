@@ -1,6 +1,6 @@
 <?php
 
-$post = $db->prepare('SELECT *,users.username FROM posts INNER JOIN users ON posts.user_id=users.id WHERE posts.id = ?', [$_GET['id']], 'App\Table\Article', true);
+$post = App\App::getDb()->prepare('SELECT *,users.username FROM posts INNER JOIN users ON posts.user_id=users.id WHERE posts.id = ?', [$_GET['id']], 'App\Table\Article', true);
 
 ?>
 

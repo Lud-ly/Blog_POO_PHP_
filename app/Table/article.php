@@ -2,24 +2,25 @@
 
 namespace App\Table;
 
+use App\App;
+
 /**
  * Article
  */
-class Article
+class Article extends Parent_table
 {
 
     /**
-     * __get
+     * getLast
      *
-     * @param  mixed $key
-     * @return void
+     * @return request
      */
-    public function __get($key)
+    public static function getLast()
     {
-        $method = 'get' . ucfirst($key);
-        $this->$key = $this->$method();
-        return $this->$key;
+        return App::getDb()->query('SELECT * from posts LEFT JOIN categories ON category_id=categories.id', __CLASS__);
     }
+
+
     /**
      * getUrl
      *

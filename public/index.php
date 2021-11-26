@@ -6,7 +6,6 @@ require '../app/database.php';
 
 App\Autoloader::register();
 
-$db = new APP\Database('blog');
 
 
 // Dynamic Class 
