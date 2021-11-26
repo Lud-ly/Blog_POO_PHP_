@@ -17,12 +17,12 @@ if ((isset($_GET["page"]))) {
 }
 
 
-// ob_start();
+ob_start();
 if ($myPage === 'home') {
     require '../views/home.php';
 } elseif ($myPage === 'article') {
     require '../views/single.php';
 }
 
-// $content = ob_get_clean();
-// require '../views/templates/default.php';
+$content = ob_get_clean();
+require '../views/templates/default.php';
