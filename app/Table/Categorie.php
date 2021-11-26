@@ -15,7 +15,7 @@ class Categorie extends Parent_table
     /**
      * getUrl
      *
-     * @return void
+     * @return URI with id
      */
     public function getUrl()
     {

@@ -13,7 +13,6 @@ class Parent_table
 
     private static function getTable()
     {
-        //die(static::$table);
         if (static::$table === null) {
 
             $class_name = explode('\\', get_called_class());
