@@ -26,7 +26,7 @@
 <body>
     <div class="container">
 
-        <header class="blog-header py-3">
+        <header class="blog-header py-3 article">
             <div class="row flex-nowrap justify-content-between align-items-center">
                 <div class="col-4 pt-1">
                     <a class="text-muted" href="https://www.foxenews.ludovic-mouly.com" target="_blank">Infos</a>

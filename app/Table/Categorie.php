@@ -19,6 +19,6 @@ class Categorie extends Parent_table
      */
     public function getUrl()
     {
-        return 'index.php?page=category&id=' . $this->id;
+        return 'index.php?page=categorie&id=' . $this->id;
     }
 }

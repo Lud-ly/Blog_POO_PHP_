@@ -22,6 +22,12 @@ class Parent_table
         }
     }
 
+
+    public static function find($id)
+    {
+        return App::getDb()->prepare("SELECT * FROM " . static::getTable() . " WHERE  id =? ", [$id], get_called_class(), true);
+    }
+
     /**
      * get All categories
      * 

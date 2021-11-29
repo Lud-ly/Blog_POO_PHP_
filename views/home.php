@@ -19,7 +19,7 @@
             <?php endforeach; ?>
         </div>
 
-        <div class="p-4 col-md-4 text-center">
+        <div class="p-4 col-md-4 text-center article mb-3">
             <h4 class="font-italic">Categories</h4>
             <ol class="list-unstyled mb-0">
                 <?php foreach (\App\Table\Categorie::getAll() as $category) : ?>

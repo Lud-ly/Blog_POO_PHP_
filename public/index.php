@@ -22,6 +22,8 @@ if ($myPage === 'home') {
     require '../views/home.php';
 } elseif ($myPage === 'article') {
     require '../views/single.php';
+} elseif ($myPage === 'categorie') {
+    require '../views/categorie.php';
 }
 
 $content = ob_get_clean();
