@@ -30,7 +30,6 @@
             <div class="row flex-nowrap justify-content-between align-items-center">
                 <div class="col-4 pt-1">
                     <a class="text-muted" href="index" target="_blank">Home</a>
-                    <a class="text-muted" href="https://www.foxenews.ludovic-mouly.com" target="_blank">Infos</a>
                 </div>
                 <div class="col-4 text-center">
                     <a class="blog-header-logo text-dark" href="#">Large Blog</a>
