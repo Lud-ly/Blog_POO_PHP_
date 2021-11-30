@@ -24,6 +24,8 @@ if ($myPage === 'home') {
     require '../views/single.php';
 } elseif ($myPage === 'categorie') {
     require '../views/categorie.php';
+} elseif ($myPage === 'auteur') {
+    require '../views/author.php';
 }
 
 $content = ob_get_clean();

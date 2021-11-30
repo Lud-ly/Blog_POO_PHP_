@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <title>Blog</title>
+    <title><?= \APP\App::getTitle(); ?></title>
 
 
     <!-- Custom styles for this template -->
@@ -29,6 +29,7 @@
         <header class="blog-header py-3 article">
             <div class="row flex-nowrap justify-content-between align-items-center">
                 <div class="col-4 pt-1">
+                    <a class="text-muted" href="index" target="_blank">Home</a>
                     <a class="text-muted" href="https://www.foxenews.ludovic-mouly.com" target="_blank">Infos</a>
                 </div>
                 <div class="col-4 text-center">

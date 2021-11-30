@@ -17,7 +17,7 @@ class Article extends Parent_table
      */
     public static function getLast()
     {
-        return self::query("SELECT *,posts.id from posts LEFT JOIN categories ON posts.category_id=categories.id");
+        return self::query("SELECT *,posts.id,users.username from posts LEFT JOIN categories ON posts.category_id=categories.id LEFT JOIN users ON posts.user_id=users.id");
     }
 
     public static function lastByCategory($category_id)

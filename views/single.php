@@ -1,7 +1,15 @@
 <?php
 
-$post = App\App::getDb()->prepare('SELECT *,users.username FROM posts INNER JOIN users ON posts.user_id=users.id WHERE posts.id = ?', [$_GET['id']], 'App\Table\Article', true);
+use App\Table\Categorie;
+use APP\App;
+use App\Table\Article;
 
+$post = Article::findByUser($_GET['id']);
+if ($post === false) {
+    App::notfound();
+}
+$categorie = Categorie::find($post->category_id);
+App::setTitle($post->title);
 ?>
 
 
@@ -17,7 +25,8 @@ $post = App\App::getDb()->prepare('SELECT *,users.username FROM posts INNER JOIN
             <h3 class="blog-post-title"><?= $post->username; ?></h3>
             <a href="#"><?= $post->created_at; ?></a>
             <p><?= $post->body; ?></p>
-            <span>VUES :</span> <?= $post->views; ?>
+            <span>VUES :</span> <?= $post->views; ?><br>
+            <span>CATEGORIE :</span> <?= $categorie->name; ?>
         </div>
         <div class="col-md-6">
             <p class="text-center mt-5"><img src="../public/img/<?= $post->img; ?>" width="75%" alt="image de l'article" /></p>

@@ -12,7 +12,11 @@
             <?php foreach (\App\Table\Article::getLast() as $post) : ?>
                 <div class="article mb-3">
                     <h2><a href=<?= $post->url; ?>"><?= $post->title; ?></a></h2>
-                    <p>categorie : <?= $post->name; ?></p>
+                    <a href="<?= $post->url; ?>">
+                        <?= "By " . $post->username; ?>
+                    </a>
+                    <?= "le " . " " . $post->created_at;  ?>
+                    <p>Categorie : <?= $post->name; ?></p>
                     <p><?= $post->extrait; ?></p>
                     <img src="../public/img/<?= $post->img; ?>" width="50%" alt="image de l'article" class="mb-5" />
                 </div>
@@ -20,13 +24,14 @@
         </div>
 
         <div class="p-4 col-md-4 text-center article mb-3">
-            <h4 class="font-italic">Categories</h4>
-            <ol class="list-unstyled mb-0">
-                <?php foreach (\App\Table\Categorie::getAll() as $category) : ?>
+            <h4 class="font-italic">Auteurs</h4>
+            <ol class="list-unstyled mb-0 list-group">
+                <?php foreach (\App\Table\Author::getAll() as $author) : ?>
 
-                    <li>
-                        <a href="<?= $category->url; ?>">
-                            <?= $category->name; ?>
+                    <li class="list-group-item">
+                        <a href="<?= $author->url; ?>">
+                            <?= $author->firstname; ?>
+                            <?= $author->lastname; ?>
                         </a>
                     </li>
 

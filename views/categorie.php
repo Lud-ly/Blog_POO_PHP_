@@ -1,10 +1,13 @@
 <?php
 
+use App\App;
 use App\Table\Article;
 use App\Table\Categorie;
 
 $categorie = Categorie::find($_GET['id']);
-// var_dump($categorie);
+if ($categorie === false) {
+    App::notfound();
+}
 $articles =  Article::lastByCategory($_GET['id']);
 $categories = Categorie::getAll();
 ?>

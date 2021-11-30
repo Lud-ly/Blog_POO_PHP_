@@ -28,6 +28,18 @@ class Parent_table
         return App::getDb()->prepare("SELECT * FROM " . static::getTable() . " WHERE  id =? ", [$id], get_called_class(), true);
     }
 
+
+
+    public static function findByUser($id)
+    {
+        return App::getDb()->prepare("SELECT *,users.username FROM posts INNER JOIN users ON posts.user_id=users.id WHERE posts.id = ?", [$id], get_called_class(), true);
+    }
+
+    public static function getPostsByAuthor($id)
+    {
+        return App::getDb()->prepare("SELECT * FROM posts LEFT JOIN users ON posts.user_id=users.id WHERE users.id = ?", [$id],  get_called_class());
+    }
+
     public static function query($statement, $attributes = null, $one = false)
     {
         if ($attributes) {
